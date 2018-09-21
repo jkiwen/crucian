@@ -10,6 +10,8 @@ flask-migrate :数据同步和管理工具
 
 <https://flask-migrate.readthedocs.io/en/latest/>
 
+flask-classy : 视图组织
+
 sqlalchemy : nosql
 
 <http://www.sqlalchemy.org/>
