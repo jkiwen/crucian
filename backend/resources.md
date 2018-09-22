@@ -32,3 +32,11 @@ PyPI Page: Flask-Cors
 Documentation: [Read docs @ flask-cors.readthedocs.org](http://flask-cors.readthedocs.org/en/latest)
 
 On Github: wcdolphin/flask-cors
+
+python-dotenv : .env 文件管理与运行环境设置
+
+[LINK](https://github.com/theskumar/python-dotenv)
+
+click :
+
+https://www.cnblogs.com/xiao-apple36/p/9089027.html
