@@ -3,18 +3,18 @@
  * @author Franks.T.D
  * @date 2018/06/17
  */
- 
+
 const path = require('path')
 const debug = process.env.NODE_ENV !== 'production'
 const VueConf = require('./src/vueconf')
 const vueConf = new VueConf(process.argv)
- 
+
 console.log('')
 console.log('本地启动或构建的文件信息 | 开始--------------------------------------------------------------')
 console.log(vueConf.pages)
 console.log('本地启动或构建的文件信息 | 结束--------------------------------------------------------------')
 console.log('')
- 
+
 module.exports = {
   baseUrl: vueConf.baseUrl, // 根域上下文目录
   outputDir: 'dist', // 构建输出目录

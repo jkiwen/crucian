@@ -44,18 +44,26 @@ module.exports = class VueConf {
         for (let item of this.newArgv) Reflect.set(result, item, allPages[item])
       }
     } else if (this.rawArgv[0] === 'build') {
-      this.baseUrl = appconf.baseUrl(this.newArgv[0])
-      result = appconf.urls[this.newArgv[0]]
+      // console.log(this.allPages)
+      // console.log(this.newArgv[0])
+      // this.baseUrl = appconf.baseUrl(this.newArgv[0])
+      // result = appconf.urls[this.newArgv[0]]
+      // console.log(result)
+      this.baseUrl = 'templates'
+      result = allPages
     }
     return result
   }
+  
   vueEntryPages (globPath, type) {
     const [pages, tempSet, validPages] = [this.pages, this.tempSet, this.validPages()]
     let [matchList, tempArr, modName] = [glob.sync(globPath), [], null]
     if (matchList.length !== 0) {
       for (var entry of matchList) {
         tempArr = path.dirname(entry, path.extname(entry)).split('/')
-        console.log(tempArr)
+        console.log('tempArr=='+tempArr)
+        let fileNamePath = tempArr.slice(3).join('/')
+        console.log('fileNamePath==' + fileNamePath)
         modName = tempArr[tempArr.length - 1]
         console.log(modName)
         if (!Object.keys(validPages).includes(modName)) {
@@ -64,7 +72,7 @@ module.exports = class VueConf {
         } else {
             console.log(tempSet)
           if (tempSet.has(modName)) {
-            Object.assign(pages[modName], { [type]: entry, 'filename': validPages[modName] })
+            Object.assign(pages[modName], { [type]: entry, 'filename': fileNamePath.concat('/',validPages[modName]) })
           } else {
             Reflect.set(pages, modName, { [type]: entry }) && tempSet.add(modName)
           }

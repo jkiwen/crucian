@@ -7,14 +7,15 @@ module.exports = {
             BASE_URL: '', // 二级目录
             INDEX_HTML: 'documents', // 默认页（自动改名为index.html）
             CONTEXT_DIRECTORY: [ // 目录树结构（上接BASE_URL或DOMAIN）
-                
+         
             ]
         },
         {
             BASE_URL: '', // 二级目录
             INDEX_HTML: 'workbench', // 默认页（自动改名为index.html）
             CONTEXT_DIRECTORY: [ // 目录树结构（上接BASE_URL或DOMAIN）
-                
+                'menu',
+                'tree'
             ]
         }
     ]
